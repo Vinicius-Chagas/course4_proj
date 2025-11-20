@@ -41,6 +41,9 @@ class Dev(Configuration):
 
     OMDB_KEY = '97ca155f'
 
+    CELERY_RESULT_BACKEND = 'django-db'
+    CELERY_BROKER_URL = 'redis://localhost:6379/0'
+
 
     # Application definition
 
@@ -52,6 +55,7 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
         'movies',
+        'django_celery_results'
     ]
 
     MIDDLEWARE = [
